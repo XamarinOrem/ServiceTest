@@ -1,0 +1,229 @@
+﻿<Page
+    x:Class="TangApplication.Pages.EventsListPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TangApplication.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="#96C12C" Name="EverythingOnPage">
+        <StackPanel VerticalAlignment="Top"
+                    Orientation="Vertical" 
+                    HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal" >
+                <StackPanel Orientation="Vertical" >
+                    <Image x:Name="btnBack" 
+                        Tapped="btnBack_Click" 
+                           Source="ms-appx:///Assets/backward-arrow.png" Margin="0,10" Width="65" HorizontalAlignment="Left"
+                          >
+                        <Image.Projection>
+                            <PlaneProjection RotationX="1"/>
+                        </Image.Projection>
+
+                    </Image>
+                    <TextBlock Text="EVENTS" FontSize="25" Margin="10"/>
+                </StackPanel>
+                <StackPanel Margin="50,0,0,0">
+                    <Image Source="ms-appx:///Assets/logo-l.png"
+                       Margin ="0,10,10,10"
+                     Width="220"  />
+                </StackPanel>
+
+            </StackPanel>
+
+            <StackPanel Height="2" Background="White">
+
+            </StackPanel>
+
+        </StackPanel>
+
+        <Border BorderBrush="white"  Margin="0,50,0,0"     
+                    BorderThickness="3"
+                    CornerRadius="15,15,15,15"
+                  HorizontalAlignment="Left"                   
+               VerticalAlignment="Center" Width="400" Height="380" Background="#ffffff">
+            <StackPanel  HorizontalAlignment="Left"                   
+               VerticalAlignment="Center" Width="400" Height="380" Background="Transparent"
+                         >
+                <Popup x:Name="popupFilter" IsOpen="False"
+               IsLightDismissEnabled="True"
+                   Closed="popupFilter_Closed" >
+
+                    <Popup.ChildTransitions>
+
+                        <TransitionCollection>
+
+                            <PaneThemeTransition />
+
+                        </TransitionCollection>
+
+                    </Popup.ChildTransitions>
+                    <StackPanel Orientation="Vertical" 
+                                Background="#96C12C" 
+                                x:Name="pop" Width="360"  Margin="20,0,20,0">
+
+                        <StackPanel Orientation="Horizontal" 
+                                    Background="#96C12C" >
+
+                            <TextBlock Text="FILTER"  HorizontalAlignment="Left"  Foreground="White"
+                                       FontSize="20" Margin="5" FontWeight="Bold"  />
+                            <Image Source="ms-appx:///Assets/WideLogo.png"
+                      HorizontalAlignment="Right" 
+                     Margin="200,5,5,5" Width="100" Height="20"/>
+
+                        </StackPanel>
+                        <StackPanel Height="2" Margin="0,0" Background="White"/>
+                        <StackPanel  Margin="0,0" 
+                                 Background="#C0DA80">
+
+                            <TextBlock Text="DATE" Foreground="White" Margin="5"
+                                   FontSize="17" FontWeight="Bold"  />
+
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0" 
+                              
+                                Background="#96C12C">
+
+                            <TextBlock Text="FROM"  Foreground="White"
+                                   FontSize="17" FontWeight="Bold" Margin="5,8,5,5"  />
+
+                            <DatePicker Name="dtpFrom" Background="#96C12C" Foreground="White"
+                                    BorderThickness="0" FontSize="15" Margin="0,-7" >
+
+                            </DatePicker>
+                            <TextBlock Text="TO"  Foreground="White" FontSize="17" 
+                                   FontWeight="Bold" Margin="50,8,5,5" />
+                            <DatePicker Name="dtpTo" Background="#96C12C" Foreground="White"
+                                    BorderThickness="0" FontSize="15" Margin="0,-7,0,-7"   />
+
+
+
+                        </StackPanel>
+                        <StackPanel  Margin="0,0"  Background="#C0DA80">
+
+                            <TextBlock Text="REGION" Margin="5" Foreground="White"
+                                   FontSize="17" FontWeight="Bold"  />
+
+                        </StackPanel>
+                        <StackPanel  Margin="0,0"  Background="#96C12C">
+
+                            <ComboBox  Name="cmbRegion" Margin="0,-7" BorderThickness="0" 
+                                   />
+
+                        </StackPanel>
+                        <StackPanel  Margin="0,0"  Background="#C0DA80">
+
+                            <TextBlock Text="PROVINCE" Margin="5" Foreground="White"
+                                   FontSize="17" FontWeight="Bold"  />
+
+                        </StackPanel>
+                        <StackPanel  Margin="0,0"  Background="#96C12C">
+
+                            <ComboBox  Margin="0,-7"  BorderThickness="0"
+                                   Name="cmbProvince"/>
+
+                        </StackPanel>
+                        <StackPanel  Margin="0,0"  Background="#C0DA80">
+
+                            <TextBlock Text="FILTER BY TEXT" Margin="5" Foreground="White"
+                                   FontSize="17" FontWeight="Bold"  />
+
+                        </StackPanel>
+                        <StackPanel  Margin="0,0"  Background="#96C12C" >
+
+                            <TextBox Name="txtSearch" 
+                                  BorderThickness="0" Foreground="White" 
+                                  Background="#96C12C" ></TextBox>
+
+                        </StackPanel>
+
+
+
+                        <StackPanel Height="2" Margin="0,0" Background="White"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,0" HorizontalAlignment="Center">
+
+                            <Button x:Name="btnClear"  Foreground="White"   Width="100" 
+                                    Content="CLEAR" Click="btnClear_Click"/>
+
+                            <Button x:Name="btnCancel"    Foreground="White"  Width="100" 
+                                    Content="CANCEL" Click="btnCancel_Click" BorderThickness="0,2.5" />
+                            <Button x:Name="btnOk"    Foreground="White"  Width="100" 
+                                    Content="OK" Click="btnOk_Click" />
+
+                        </StackPanel>
+
+
+
+                    </StackPanel>
+
+
+
+                </Popup>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Image Name="btnMap"  Tapped="btnMap_Click" Source="ms-appx:///Assets/earth.png" Margin="10,0,0,0"/>
+                    <Image  Name="btnFilter"
+                       Margin="10"      Tapped="btnFilter_Click" Source="ms-appx:///Assets/pin_g.png"/>
+                </StackPanel>
+                <ProgressRing  Name="progresRing" IsActive="False"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"  
+                            Background="White" Visibility="Collapsed" />
+                <Frame Name="frameMap"></Frame>
+                <ScrollViewer Height="320" VerticalAlignment="Top" VerticalScrollBarVisibility="Visible" VerticalScrollMode="Enabled" AllowDrop="False" BringIntoViewOnFocusChange="True" HorizontalScrollMode="Disabled" IsHoldingEnabled="True" >
+                    <Grid Grid.Row="1" x:Name="ContentRoot" Height="800" Width="386" >
+
+                        <ListView  x:Name="lstEvents" BorderThickness="0" 
+                           
+                               SelectionChanged="lstEvents_SelectionChanged" >
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Background="#ffffff" Width="400" 
+                                  Margin="0,0,0,0">
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="{Binding titolo}"
+                                              TextWrapping="Wrap"
+                                               FontSize="18"
+                                               Margin="0,5,81,0"
+                                                   Foreground="#000000" 
+                                                   FontWeight="Bold" />
+                                            <TextBlock Text="{Binding citta}"
+                                               FontSize="18" 
+                                               Margin="0,5,81,0"
+                                               TextWrapping="Wrap" 
+                                              Foreground="#000000"/>
+                                            <TextBlock Text="{Binding Data_Date}"
+                                               FontSize="18" 
+                                               Margin="0,5,81,0"
+                                               TextWrapping="Wrap" 
+                                              Foreground="#000000"/>
+                                            <StackPanel Height="2"
+                                                    Background="#90BE00">
+
+                                            </StackPanel>
+                                        </StackPanel>
+
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+
+                        </ListView>
+                    </Grid>
+                </ScrollViewer>
+
+
+            </StackPanel>
+
+        </Border>
+        <WebView Margin="-300,550,0,10" Name="webViewADS"  Height="1000"
+                     Width="1000" DefaultBackgroundColor ="#96C12C" >
+
+        </WebView>
+
+
+
+
+    </Grid>
+</Page>

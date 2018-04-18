@@ -1,0 +1,9 @@
+﻿<Application
+    x:Class="TangApplication.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TangApplication">
+    <Application.Resources>
+        <SolidColorBrush x:Key="ButtonPressedBackgroundThemeBrush"  Color="#3FB34F" />
+    </Application.Resources>
+</Application>
