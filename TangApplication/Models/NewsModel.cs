@@ -5,12 +5,12 @@ namespace TangApplication.Models
 {
     public class NewsModel
     {
-        public string post_date1 { get; set; }
+        public string post_date { get; set; }
         public string Post_Date
         {
             get
             {
-                return Convert.ToDateTime(post_date1).ToString("dd-MM-yyyy"); 
+                return Convert.ToDateTime(post_date).ToString("dd-MM-yyyy"); 
             }
            
         }
