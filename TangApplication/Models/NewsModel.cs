@@ -10,7 +10,7 @@ namespace TangApplication.Models
         {
             get
             {
-                return Convert.ToDateTime(post_date).ToString("dd-MM-yyyy"); 
+                return Convert.ToDateTime(post_date1).ToString("dd-MM-yyyy"); 
             }
            
         }
