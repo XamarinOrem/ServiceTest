@@ -30,7 +30,7 @@ namespace TangApplication.Common
                                  NetworkConnectivityLevel.InternetAccess);
             return HasInternetAccess;
         }
-        public static bool CheckInternetAccess1()
+        public static bool CheckInternetAccess1d()
         {
             var connectionProfile = NetworkInformation.GetInternetConnectionProfile();
             HasInternetAccess = (connectionProfile != null &&
